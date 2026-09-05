@@ -514,6 +514,119 @@ footer p { font-size: 0.88rem; color: rgba(255,255,255,0.3); }
   50%      { transform: scale(1.3); }
 }
 
-@media (max-width: 600px) {
-  .letter-card { padding: 2rem 1.5rem; }
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE — Tablet (≤ 768px) + Mobile (≤ 480px)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Tablet ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Curtain */
+  .curtain-candle { font-size: 3.8rem; }
+  .curtain-sub { font-size: 0.85rem; letter-spacing: 0.1em; }
+  .curtain-cta { padding: 0.75rem 2rem; font-size: 0.95rem; }
+
+  /* Hero */
+  .hero { padding: 5rem 1.2rem 3rem; }
+  .hero-badge {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.35rem 0.9rem;
+    white-space: normal;
+    text-align: center;
+  }
+  .hero-desc { font-size: 0.97rem; padding: 0 0.5rem; }
+  .hero-scroll { margin-top: 2rem; }
+
+  /* Quotes */
+  .quotes-section { padding: 4rem 1.2rem; }
+  .quotes-grid { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+
+  /* Letter */
+  .letter-section { padding: 5rem 1.2rem; }
+  .letter-card { padding: 2.5rem 2rem; }
+
+  /* Pillars */
+  .pillars-section { padding: 4rem 1.2rem; }
+  .pillars-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+
+  /* Message Board */
+  .board-section { padding: 4rem 1.2rem; }
+
+  /* Section headings */
+  .section-subtitle { margin-bottom: 2.5rem; }
+}
+
+/* ── Mobile ─────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  /* Curtain */
+  .curtain-candle { font-size: 3rem; margin-bottom: 1rem; }
+  .curtain-title { font-size: clamp(1.5rem, 7vw, 2rem); }
+  .curtain-sub { display: none; }       /* avoids overflow on tiny screens */
+  .curtain-cta {
+    margin-top: 1.8rem;
+    padding: 0.7rem 1.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* Hero */
+  .hero { padding: 4.5rem 1rem 3rem; min-height: 100svh; }
+  .hero-badge {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.8rem;
+    max-width: 90vw;
+    line-height: 1.5;
+  }
+  .hero-title { font-size: clamp(2.4rem, 11vw, 3.5rem); }
+  .hero-sub   { font-size: clamp(1.1rem, 5vw, 1.5rem); }
+  .hero-desc  { font-size: 0.9rem; line-height: 1.7; margin-top: 1.2rem; padding: 0 0.2rem; }
+  .hero-scroll { margin-top: 1.8rem; }
+
+  /* Suppress giant orbs on mobile (avoid horizontal overflow) */
+  .hero::before, .hero::after { display: none; }
+
+  /* Quotes */
+  .quotes-section { padding: 3.5rem 0.9rem; }
+  .quotes-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .quote-card { padding: 1.5rem 1.4rem 1.4rem; }
+  .quote-text { font-size: 0.95rem; }
+
+  /* Letter */
+  .letter-section { padding: 4rem 0.9rem; }
+  .letter-card { padding: 1.8rem 1.2rem; border-radius: 18px; }
+  .letter-stamp { font-size: 2.4rem; }
+  .letter-heading { font-size: clamp(1.5rem, 6vw, 2rem); }
+  .letter-body { font-size: 0.92rem; line-height: 1.75; }
+  .letter-sig span { font-size: 1.3rem; }
+
+  /* Pillars */
+  .pillars-section { padding: 3.5rem 0.9rem; }
+  .pillars-grid { grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+  .pillar-card { padding: 1.8rem 1rem; }
+  .pillar-icon { font-size: 2.2rem; }
+  .pillar-title { font-size: 1rem; }
+  .pillar-desc { font-size: 0.8rem; }
+
+  /* Message Board */
+  .board-section { padding: 3.5rem 0.9rem; }
+  .board-form input,
+  .board-form textarea { font-size: 0.9rem; padding: 0.85rem 1rem; }
+  .board-submit { padding: 0.75rem 1.8rem; font-size: 0.88rem; }
+  .msg-card { padding: 1rem 1.1rem; }
+  .msg-text { font-size: 0.88rem; }
+
+  /* Section headings */
+  .section-title { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+  .section-subtitle { font-size: 0.88rem; margin-bottom: 2rem; padding: 0 0.5rem; }
+
+  /* Footer */
+  footer { padding: 2rem 1rem; }
+  footer p { font-size: 0.8rem; }
+}
+
+/* ── Very small screens (≤ 360px) ───────────────────────────── */
+@media (max-width: 360px) {
+  .hero-title { font-size: clamp(2rem, 12vw, 2.6rem); }
+  .pillars-grid { grid-template-columns: 1fr; }
+  .curtain-cta { width: 85%; text-align: center; }
 }
