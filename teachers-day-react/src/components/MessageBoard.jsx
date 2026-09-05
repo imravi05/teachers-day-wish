@@ -1,24 +1,6 @@
 import { useState } from 'react';
 import { launchConfetti } from '../utils/confetti';
 
-const DEFAULT_MESSAGES = [
-  {
-    name: 'Priya, Class 12-A',
-    text: "Thank you for always staying back after class to help me understand. You changed my life, ma'am! 💛",
-    time: '9:12 AM',
-  },
-  {
-    name: 'Arjun Sharma',
-    text: "Sir, your physics classes were the highlight of my school days. I'm an engineer today because of you. 🚀",
-    time: '10:30 AM',
-  },
-  {
-    name: 'Anonymous',
-    text: "To every teacher who ever believed in a 'difficult' student — your patience is a superpower. 🌟",
-    time: '11:45 AM',
-  },
-];
-
 function MessageCard({ msg }) {
   return (
     <div className="msg-card">
@@ -30,7 +12,7 @@ function MessageCard({ msg }) {
 }
 
 export default function MessageBoard() {
-  const [messages, setMessages] = useState(DEFAULT_MESSAGES);
+  const [messages, setMessages] = useState([]);
   const [name, setName] = useState('');
   const [text, setText] = useState('');
 
